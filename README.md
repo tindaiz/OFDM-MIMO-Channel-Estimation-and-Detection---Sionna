@@ -44,7 +44,7 @@ Phân tích ảnh hưởng của:
 Dự án hướng tới mục tiêu benchmark các bộ thu OFDM-MIMO trong điều kiện thực tế, đồng thời làm nền tảng cho các nghiên cứu nâng cao như learned receivers hoặc model-driven deep learning trong 5G/6G.
 
 ## 2. Cài đặt
-Phần này hướng dẫn chi tiết cách cài đặt môi trường để chạy mô phỏng OFDM MIMO Channel Estimation and Detection bằng framework Sionna, đảm bảo tái lập được toàn bộ kết quả mô phỏng trong dự án.
+Phần này hướng dẫn chi tiết cách cài đặt môi trường để chạy mô phỏng OFDM MIMO Channel Estimation and Detection bằng framework Sionna.
 
 ### 2.1. Yêu cầu hệ thống
 
@@ -158,6 +158,7 @@ Trong giao diện Jupyter:
 ### 3.4.1. Chạy toàn bộ Notebook
 
 Chọn Run → Run All Cells
+
 Hoặc dùng phím tắt:
 ```
 Shift + Enter
@@ -171,7 +172,57 @@ Shift + Enter
 4. Thực hiện mô phỏng
 5. Hiển thị và lưu kết quả (BER/SER, biểu đồ)
 
+### 3.5. Thời gian chạy và tài nguyên
+Thời gian mô phỏng phụ thuộc vào:
+- Số iteration
+- Batch size
+- Số antenna (MIMO order)
+- Mức SNR khảo sát
+
 ### 4. Kết quả
 
+Phần này trình bày các kết quả chính thu được từ quá trình mô phỏng hệ thống OFDM MIMO Channel Estimation and Detection sử dụng framework Sionna, đồng thời đưa ra những nhận xét tổng quan về hiệu năng hệ thống.
+
+### 4.1. Các chỉ số đánh giá
+
+Trong dự án, hiệu năng hệ thống được đánh giá thông qua các chỉ số sau:
+- BER (Bit Error Rate): Tỷ lệ lỗi bit sau khi giải mã, phản ánh trực tiếp chất lượng truyền dẫn của hệ thống.
+- SER (Symbol Error Rate) : Tỷ lệ lỗi ký hiệu trước khi giải mã kênh.
+- SNR (Signal-to-Noise Ratio): Tham số chính để khảo sát hiệu năng hệ thống trong các điều kiện kênh khác nhau.
+
+### 4.2. Kết quả mô phỏng BER theo SNR
+
+![Kết quả mô phỏng](doc/ketqua.png)
+
+Kết quả mô phỏng cho thấy:
+- BER giảm rõ rệt khi SNR tăng, phù hợp với lý thuyết truyền thông số
+- Ở vùng SNR thấp, nhiễu chiếm ưu thế làm BER cao
+- Khi SNR đủ lớn, hệ thống đạt vùng error floor thấp, cho thấy khả năng phát hiện và giải mã hiệu quả
+
+Biểu đồ BER–SNR thể hiện rõ xu hướng này và được sử dụng để so sánh các cấu hình hệ thống khác nhau.
+
+### 4.3. Ảnh hưởng của số lượng antenna (MIMO order)
+
+Kết quả mô phỏng chỉ ra rằng:
+- Khi số antenna phát/thu tăng, hiệu năng hệ thống được cải thiện
+- Hệ thống MIMO khai thác được đa dạng không gian (spatial diversity) và đa luồng (spatial multiplexing)
+- Với cùng mức SNR, cấu hình MIMO bậc cao cho BER thấp hơn so với cấu hình ít antenna
+Điều này chứng minh vai trò quan trọng của MIMO trong các hệ thống thông tin không dây hiện đại như LTE và 5G.
+
+### 4.4. So sánh các phương pháp ước lượng và phát hiện
+
+Tùy theo cấu hình mô phỏng, các phương pháp phát hiện tín hiệu được đánh giá cho thấy:
+- Các phương pháp phi tuyến (ví dụ: MMSE-PIC, EP, K-Best) cho hiệu năng tốt hơn so với phương pháp tuyến tính trong điều kiện kênh phức tạp
+- Khi CSI không hoàn hảo, hiệu năng giảm nhưng vẫn giữ được xu hướng BER–SNR ổn định
+- Sionna cho phép mô phỏng linh hoạt cả trường hợp perfect CSI và imperfect CSI
+Kết quả phản ánh sát các phân tích lý thuyết trong các tài liệu nghiên cứu về OFDM MIMO.
+
+### 4.5. Tổng kết kết quả
+
+Từ các kết quả mô phỏng, có thể rút ra các kết luận chính:
+- Hệ thống OFDM MIMO cho hiệu năng vượt trội so với hệ thống SISO
+- Hiệu năng truyền dẫn phụ thuộc mạnh vào SNR và số lượng antenna
+- Framework Sionna cho phép xây dựng mô hình end-to-end linh hoạt, trực quan và sát thực tế
+- Kết quả mô phỏng phù hợp với lý thuyết truyền thông số và các nghiên cứu liên quan
 
 
