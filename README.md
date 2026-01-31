@@ -48,7 +48,7 @@ Phần này hướng dẫn chi tiết cách cài đặt môi trường để ch�
 
 ### 2.1. Yêu cầu hệ thống
 
-#### 2.1.1. Phần cứng (khuyến nghị)
+### 2.1.1. Phần cứng (khuyến nghị)
 
 CPU: Intel/AMD 64-bit
 
@@ -104,6 +104,7 @@ pip install sionna tensorflow numpy scipy matplotlib
 ```
 
 Các phiên bản thư viện đã được sử dụng trong dự án trên Ubuntu 22.04:
+
 ---
 | Thư viện       | Phiên bản |
 | -------------- | --------- |
