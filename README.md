@@ -110,7 +110,7 @@ pip install sionna tensorflow numpy scipy matplotlib
 ```
 
 Các phiên bản thư viện đã được sử dụng trong dự án trên Ubuntu 22.04:
-```
+---
 | Thư viện       | Phiên bản |
 | -------------- | --------- |
 | **Sionna**     | 1.2.0     |
@@ -118,7 +118,9 @@ Các phiên bản thư viện đã được sử dụng trong dự án trên Ubu
 | **NumPy**      | 1.26.4    |
 | **SciPy**      | 1.11.4    |
 | **Matplotlib** | 3.8.2     |
-```
+
+---
+
 # 2.4. Cài đặt và sử dụng Jupyter Notebook (nếu dùng)
 ```
 pip install jupyterlab
