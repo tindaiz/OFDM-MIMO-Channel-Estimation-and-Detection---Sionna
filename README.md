@@ -85,7 +85,6 @@ Khuyến nghị sử dụng virtual environment để tránh xung đột thư vi
 ```
 sudo apt update
 sudo apt install python3 python3-pip python3-venv -y
-
 ```
 Kiểm tra phiên bản:
 ```
@@ -96,7 +95,6 @@ python3 --version
 ```
 python3 -m venv venv
 source venv/bin/activate
-
 ```
 Sau khi kích hoạt thành công, terminal sẽ hiển thị tiền tố (venv).
 
@@ -130,8 +128,3 @@ Truy cập Jupyter Notebook trong môi trường ảo:
 ```
 jupyter lab
 ``
-
-
-
-
-
