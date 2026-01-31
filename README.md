@@ -1,127 +1,137 @@
-<!--
-SPDX-FileCopyrightText: Copyright (c) 2021-2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-SPDX-License-Identifier: Apache-2.0
--->
-# Sionna: An Open-Source Library for Research on Communication Systems
+# OFDM MIMO Channel Estimation and Detection with Sionna (5G)
 
-Sionna&trade; is an open-source Python-based library for research on
-communication systems.
+# 1. Mục tiêu (Objectives)
 
-The official documentation can be found
-[here](https://nvlabs.github.io/sionna/).
+Dự án này tập trung nghiên cứu và mô phỏng bài toán ước lượng kênh (Channel Estimation) và phát hiện tín hiệu (MIMO Detection) trong hệ thống OFDM-MIMO theo chuẩn 5G NR, sử dụng framework Sionna của NVIDIA dựa trên TensorFlow.
 
-It is composed of the following packages:
+Các mục tiêu chính của dự án bao gồm:
 
-- [Sionna RT](https://nvlabs.github.io/sionna/rt/index.html) -
-    A lightning-fast stand-alone ray tracer for radio propagation modeling
+Xây dựng mô hình end-to-end OFDM-MIMO từ phía phát đến phía thu theo chuẩn 5G
 
-- [Sionna PHY](https://nvlabs.github.io/sionna/phy/index.html) -
-    A link-level simulator for wireless and optical communication systems
+Nghiên cứu và so sánh các phương pháp ước lượng kênh OFDM, bao gồm:
 
-- [Sionna SYS](https://nvlabs.github.io/sionna/sys/index.html) -
-    A system-level simulator based on physical-layer abstraction
+- Least Squares (LS)
 
-# Installation
-Sionna PHY and Sionna SYS require [Python 3.10-3.12](https://www.python.org/) and [TensorFlow 2.14-2.19](https://www.tensorflow.org/install). We recommend Ubuntu 24.04. Earlier versions of TensorFlow may still work but are not recommended. We refer to the [TensorFlow GPU support tutorial](https://www.tensorflow.org/install/gpu) for GPU support and the required driver setup.
+- Nội suy Nearest-Neighbor
 
-Sionna RT has the same requirements as [Mitsuba
-3](https://github.com/mitsuba-renderer/mitsuba3) and we refer to its
-[installation guide](https://mitsuba.readthedocs.io/en/stable/) for further
-information. To run Sionna RT on CPU, [LLVM](https://llvm.org) is required by
-[Dr.Jit](https://drjit.readthedocs.io/en/stable/). Please check the
-[installation instructions for the LLVM
-backend](https://drjit.readthedocs.io/en/latest/what.html#backends). The source
-code of Sionna RT is located in a separate [GitHub repository](https://github.com/NVlabs/sionna-rt).
+- Nội suy Linear
 
-If you want to run the tutorial notebooks on your machine, you also need
-[JupyterLab](https://jupyter.org/). You can alternatively test them on [Google
-Colab](https://colab.research.google.com/). Although not necessary, we recommend
-running Sionna in a [Docker container](https://www.docker.com) and/or [Python virtual
-enviroment](https://docs.python.org/3/library/venv.html).
+- Nội suy LMMSE (có/không làm mượt không gian – thời gian – tần số)
 
-## Installation via pip
-The recommended way to install Sionna is via pip:
-```
-pip install sionna
-```
+Đánh giá độ chính xác ước lượng kênh thông qua chỉ số MSE (Mean Square Error) theo SNR
 
-If you want to install only Sionna RT, run:
-```
-pip install sionna-rt
-```
+So sánh các thuật toán MIMO Detection phổ biến trong Sionna:
 
-You can install Sionna without the RT package via
-```
-pip install sionna-no-rt
-```
+- LMMSE (Linear Detection)
 
-## Installation from source
-1. Clone the repository with all submodules:
-    ```
-    git clone --recursive https://github.com/NVlabs/sionna
-    ```
-    If you have already cloned the repository but forgot to set the `--recursive`
-    flag, you can correct this via:
-    ```
-    git submodule update --init --recursive --remote
-    ```
-2. Install Sionna (including Sionna RT) by running the following command from within the repository's
-   root folder:
-    ```
-    pip install ext/sionna-rt/ .
-    pip install .
-    ```
+- K-Best Detection
 
-## Testing
-First, you need to install the test requirements by executing the
-following command from the repository's root directory:
+- Expectation Propagation (EP)
 
-```
-pip install '.[test]'
-```
+- MMSE-PIC
 
-The unit tests can then be executed by running ``pytest`` from within the
-``test`` folder.
+Phân tích ảnh hưởng của:
 
-## Building the Documentation
-Install the requirements for building the documentation by running the following
-command from the repository's root directory:
+- Perfect CSI vs Imperfect CSI (Channel Estimation)
+
+- SNR (Eb/N0)
+
+- Số anten MIMO 
+
+Đánh giá hiệu năng hệ thống thông qua:
+
+- SER (Symbol Error Rate)
+
+- BER (Bit Error Rate) (có mã hóa LDPC 5G)
+
+Dự án hướng tới mục tiêu benchmark các bộ thu OFDM-MIMO trong điều kiện thực tế, đồng thời làm nền tảng cho các nghiên cứu nâng cao như learned receivers hoặc model-driven deep learning trong 5G/6G.
+
+# 2. Cài đặt
+
+Phần này hướng dẫn chi tiết cách cài đặt môi trường để chạy mô phỏng OFDM MIMO Channel Estimation and Detection bằng framework Sionna, đảm bảo tái lập được toàn bộ kết quả mô phỏng trong dự án.
+
+# 2.1. Yêu cầu hệ thống
+
+# 2.1.1. Phần cứng (khuyến nghị)
+
+CPU: Intel/AMD 64-bit
+
+RAM: ≥ 8 GB (khuyến nghị ≥ 16 GB)
+
+GPU: NVIDIA GPU hỗ trợ CUDA (tùy chọn, nhưng giúp tăng tốc mô phỏng)
+
+Dung lượng trống: ≥ 10 GB
+
+# 2.1.2. Phần mềm
+
+Hệ điều hành:
+
+- Ubuntu 20.04 / 22.04 / 24.04 (khuyến nghị)
+
+Python:
+
+- Phiên bản Python 3.9 – 3.10
+
+Trình soạn thảo / môi trường phát triển:
+
+- VS Code, PyCharm hoặc Jupyter Notebook
+
+# 2.2. Cài đặt Python và môi trường ảo
+
+Khuyến nghị sử dụng virtual environment để tránh xung đột thư viện.
+
+# 2.2.1. Cài đặt Python (nếu chưa có)
 
 ```
-pip install '.[doc]'
-```
-
-You might need to install [pandoc](https://pandoc.org) manually.
-
-You can then build the documentation by executing ``make html`` from within the ``doc`` folder.
-
-The documentation can then be served by any web server, e.g.,
+sudo apt update
+sudo apt install python3 python3-pip python3-venv -y
 
 ```
-python -m http.server --dir build/html
+Kiểm tra phiên bản:
+```
+python3 --version
+```
+# 2.2.2. Tạo và kích hoạt môi trường ảo
+
+```
+python3 -m venv venv
+source venv/bin/activate
+
+```
+Sau khi kích hoạt thành công, terminal sẽ hiển thị tiền tố (venv).
+
+# 2.3. Cài đặt các thư viện cần thiết
+# 2.3.1. Cập nhật pip
+```
+pip install --upgrade pip
 ```
 
-## For Developers
-
-Development requirements can be installed by executing from the repository's root directory:
-
+# 2.3.2. Cài đặt Sionna và các thư viện phụ thuộc
 ```
-pip install '.[dev]'
+pip install sionna tensorflow numpy scipy matplotlib
 ```
 
-Linting of the code can be achieved by running ```pylint src/``` from the repository's root directory.
-
-## License and Citation
-
-Sionna is Apache-2.0 licensed, as found in the [LICENSE](https://github.com/nvlabs/sionna/blob/main/LICENSE) file.
-
-If you use this software, please cite it as:
-```bibtex
-@software{sionna,
- title = {Sionna},
- author = {Hoydis, Jakob and Cammerer, Sebastian and {Ait Aoudia}, Fayçal and Nimier-David, Merlin and Maggi, Lorenzo and Marcus, Guillermo and Vem, Avinash and Keller, Alexander},
- note = {https://nvlabs.github.io/sionna/},
- year = {2022},
- version = {1.2.1}
-}
+Các phiên bản thư viện đã được sử dụng trong dự án trên Ubuntu 22.04:
 ```
+| Thư viện       | Phiên bản |
+| -------------- | --------- |
+| **Sionna**     | 1.2.0     |
+| **TensorFlow** | 2.10.1    |
+| **NumPy**      | 1.26.4    |
+| **SciPy**      | 1.11.4    |
+| **Matplotlib** | 3.8.2     |
+```
+# 2.4. Cài đặt và sử dụng Jupyter Notebook (nếu dùng)
+```
+pip install jupyterlab
+```
+
+Truy cập Jupyter Notebook trong môi trường ảo:
+```
+jupyter lab
+``
+
+
+
+
+
