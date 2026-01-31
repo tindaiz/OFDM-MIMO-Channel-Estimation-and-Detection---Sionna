@@ -225,10 +225,12 @@ Từ các kết quả mô phỏng, có thể rút ra các kết luận chính:
 - Framework Sionna cho phép xây dựng mô hình end-to-end linh hoạt, trực quan và sát thực tế
 - Kết quả mô phỏng phù hợp với lý thuyết truyền thông số và các nghiên cứu liên quan
 
-# License and Citation
-Sionna is Apache-2.0 licensed, as found in the LICENSE file.
+## License and Citation
+
+Sionna is Apache-2.0 licensed, as found in the [LICENSE](https://github.com/nvlabs/sionna/blob/main/LICENSE) file.
+
 If you use this software, please cite it as:
-```
+```bibtex
 @software{sionna,
  title = {Sionna},
  author = {Hoydis, Jakob and Cammerer, Sebastian and {Ait Aoudia}, Fayçal and Nimier-David, Merlin and Maggi, Lorenzo and Marcus, Guillermo and Vem, Avinash and Keller, Alexander},
