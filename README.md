@@ -125,3 +125,48 @@ Truy cập Jupyter Notebook trong môi trường ảo:
 ```
 jupyter lab
 ```
+
+### 3. Cách chạy code
+
+Phần này hướng dẫn chi tiết cách khởi chạy và thực thi mô phỏng OFDM MIMO Channel Estimation and Detection bằng Jupyter Notebook.
+
+### 3.1. Kích hoạt môi trường ảo
+Trước khi chạy Jupyter Notebook, cần kích hoạt môi trường ảo.
+```
+source venv/bin/activate
+```
+### 3.2. Khởi động Jupyter Notebook / JupyterLab
+
+Từ thư mục gốc của dự án, chạy:
+```
+jupyter lab
+```
+
+Hoặc (nếu dùng Jupyter Notebook cổ điển):
+```
+jupyter notebook
+```
+### 3.3. Mở và cấu trúc Notebook
+Trong giao diện Jupyter:
+
+1. Điều hướng tới thư mục chứa project
+2. Mở file notebook chính: tutorials/phy/OFDM_MIMO_Detection.ipynb
+
+⚠️ Lưu ý: Notebook cần được mở trong môi trường venv, nếu không có thể xảy ra lỗi thiếu thư viện
+
+### 3.4 Chạy code
+### 3.4.1. Chạy toàn bộ Notebook
+
+Chọn Run → Run All Cells
+Hoặc dùng phím tắt:
+```
+Shift + Enter
+```
+### 3.5.2. Thứ tự chạy khuyến nghị
+
+Để tránh lỗi, cần chạy notebook theo đúng thứ tự:
+1. Import thư viện (TensorFlow, Sionna, NumPy, …)
+2. Khai báo tham số hệ thống (SNR, số antenna, modulation)
+3. Xây dựng mô hình OFDM MIMO
+4. Thực hiện mô phỏng
+5. Hiển thị và lưu kết quả (BER/SER, biểu đồ)
