@@ -1,9 +1,6 @@
-# OFDM MIMO Channel Estimation and Detection with Sionna (5G)
-
-# 1. Mục tiêu (Objectives)
-
+## OFDM MIMO Channel Estimation and Detection with Sionna (5G)
+# 1. Mục tiêu
 Dự án này tập trung nghiên cứu và mô phỏng bài toán ước lượng kênh (Channel Estimation) và phát hiện tín hiệu (MIMO Detection) trong hệ thống OFDM-MIMO theo chuẩn 5G NR, sử dụng framework Sionna của NVIDIA dựa trên TensorFlow.
-
 Các mục tiêu chính của dự án bao gồm:
 
 Xây dựng mô hình end-to-end OFDM-MIMO từ phía phát đến phía thu theo chuẩn 5G
@@ -47,12 +44,11 @@ Phân tích ảnh hưởng của:
 Dự án hướng tới mục tiêu benchmark các bộ thu OFDM-MIMO trong điều kiện thực tế, đồng thời làm nền tảng cho các nghiên cứu nâng cao như learned receivers hoặc model-driven deep learning trong 5G/6G.
 
 # 2. Cài đặt
-
 Phần này hướng dẫn chi tiết cách cài đặt môi trường để chạy mô phỏng OFDM MIMO Channel Estimation and Detection bằng framework Sionna, đảm bảo tái lập được toàn bộ kết quả mô phỏng trong dự án.
 
-# 2.1. Yêu cầu hệ thống
+2.1. Yêu cầu hệ thống
 
-# 2.1.1. Phần cứng (khuyến nghị)
+2.1.1. Phần cứng (khuyến nghị)
 
 CPU: Intel/AMD 64-bit
 
@@ -62,10 +58,9 @@ GPU: NVIDIA GPU hỗ trợ CUDA (tùy chọn, nhưng giúp tăng tốc mô phỏ
 
 Dung lượng trống: ≥ 10 GB
 
-# 2.1.2. Phần mềm
+2.1.2. Phần mềm
 
 Hệ điều hành:
-
 - Ubuntu 20.04 / 22.04 / 24.04 (khuyến nghị)
 
 Python:
@@ -76,11 +71,11 @@ Trình soạn thảo / môi trường phát triển:
 
 - VS Code, PyCharm hoặc Jupyter Notebook
 
-# 2.2. Cài đặt Python và môi trường ảo
+2.2. Cài đặt Python và môi trường ảo
 
 Khuyến nghị sử dụng virtual environment để tránh xung đột thư viện.
 
-# 2.2.1. Cài đặt Python (nếu chưa có)
+2.2.1. Cài đặt Python (nếu chưa có)
 
 ```
 sudo apt update
@@ -90,7 +85,7 @@ Kiểm tra phiên bản:
 ```
 python3 --version
 ```
-# 2.2.2. Tạo và kích hoạt môi trường ảo
+2.2.2. Tạo và kích hoạt môi trường ảo
 
 ```
 python3 -m venv venv
@@ -98,13 +93,12 @@ source venv/bin/activate
 ```
 Sau khi kích hoạt thành công, terminal sẽ hiển thị tiền tố (venv).
 
-# 2.3. Cài đặt các thư viện cần thiết
-# 2.3.1. Cập nhật pip
+2.3. Cài đặt các thư viện cần thiết
+2.3.1. Cập nhật pip
 ```
 pip install --upgrade pip
 ```
-
-# 2.3.2. Cài đặt Sionna và các thư viện phụ thuộc
+2.3.2. Cài đặt Sionna và các thư viện phụ thuộc
 ```
 pip install sionna tensorflow numpy scipy matplotlib
 ```
