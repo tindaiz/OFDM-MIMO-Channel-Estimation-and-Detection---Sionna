@@ -65,7 +65,7 @@ Hệ điều hành:
 
 Python:
 
-- Phiên bản Python 3.9 – 3.10
+- Phiên bản Python 3.10 – 3.12
 
 Trình soạn thảo / môi trường phát triển:
 
@@ -162,7 +162,7 @@ Hoặc dùng phím tắt:
 ```
 Shift + Enter
 ```
-### 3.5.2. Thứ tự chạy khuyến nghị
+### 3.4.2. Thứ tự chạy khuyến nghị
 
 Để tránh lỗi, cần chạy notebook theo đúng thứ tự:
 1. Import thư viện (TensorFlow, Sionna, NumPy, …)
@@ -170,3 +170,8 @@ Shift + Enter
 3. Xây dựng mô hình OFDM MIMO
 4. Thực hiện mô phỏng
 5. Hiển thị và lưu kết quả (BER/SER, biểu đồ)
+
+### 4. Kết quả
+
+
+
