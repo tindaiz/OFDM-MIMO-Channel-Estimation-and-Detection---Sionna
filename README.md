@@ -1,5 +1,5 @@
-## OFDM MIMO Channel Estimation and Detection with Sionna (5G)
-# 1. Mục tiêu
+# OFDM MIMO Channel Estimation and Detection with Sionna (5G)
+## 1. Mục tiêu
 Dự án này tập trung nghiên cứu và mô phỏng bài toán ước lượng kênh (Channel Estimation) và phát hiện tín hiệu (MIMO Detection) trong hệ thống OFDM-MIMO theo chuẩn 5G NR, sử dụng framework Sionna của NVIDIA dựa trên TensorFlow.
 Các mục tiêu chính của dự án bao gồm:
 
@@ -43,10 +43,10 @@ Phân tích ảnh hưởng của:
 
 Dự án hướng tới mục tiêu benchmark các bộ thu OFDM-MIMO trong điều kiện thực tế, đồng thời làm nền tảng cho các nghiên cứu nâng cao như learned receivers hoặc model-driven deep learning trong 5G/6G.
 
-# 2. Cài đặt
+## 2. Cài đặt
 Phần này hướng dẫn chi tiết cách cài đặt môi trường để chạy mô phỏng OFDM MIMO Channel Estimation and Detection bằng framework Sionna, đảm bảo tái lập được toàn bộ kết quả mô phỏng trong dự án.
 
-2.1. Yêu cầu hệ thống
+### 2.1. Yêu cầu hệ thống
 
 2.1.1. Phần cứng (khuyến nghị)
 
