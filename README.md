@@ -121,7 +121,7 @@ Các phiên bản thư viện đã được sử dụng trong dự án trên Ubu
 
 ---
 
-# 2.4. Cài đặt và sử dụng Jupyter Notebook (nếu dùng)
+2.4. Cài đặt và sử dụng Jupyter Notebook (nếu dùng)
 ```
 pip install jupyterlab
 ```
