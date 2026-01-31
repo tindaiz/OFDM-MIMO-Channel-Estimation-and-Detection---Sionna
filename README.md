@@ -48,7 +48,7 @@ Phần này hướng dẫn chi tiết cách cài đặt môi trường để ch�
 
 ### 2.1. Yêu cầu hệ thống
 
-2.1.1. Phần cứng (khuyến nghị)
+#### 2.1.1. Phần cứng (khuyến nghị)
 
 CPU: Intel/AMD 64-bit
 
@@ -58,7 +58,7 @@ GPU: NVIDIA GPU hỗ trợ CUDA (tùy chọn, nhưng giúp tăng tốc mô phỏ
 
 Dung lượng trống: ≥ 10 GB
 
-2.1.2. Phần mềm
+### 2.1.2. Phần mềm
 
 Hệ điều hành:
 - Ubuntu 20.04 / 22.04 / 24.04 (khuyến nghị)
@@ -71,11 +71,11 @@ Trình soạn thảo / môi trường phát triển:
 
 - VS Code, PyCharm hoặc Jupyter Notebook
 
-2.2. Cài đặt Python và môi trường ảo
+### 2.2. Cài đặt Python và môi trường ảo
 
 Khuyến nghị sử dụng virtual environment để tránh xung đột thư viện.
 
-2.2.1. Cài đặt Python (nếu chưa có)
+### 2.2.1. Cài đặt Python (nếu chưa có)
 
 ```
 sudo apt update
@@ -85,7 +85,7 @@ Kiểm tra phiên bản:
 ```
 python3 --version
 ```
-2.2.2. Tạo và kích hoạt môi trường ảo
+### 2.2.2. Tạo và kích hoạt môi trường ảo
 
 ```
 python3 -m venv venv
@@ -93,12 +93,12 @@ source venv/bin/activate
 ```
 Sau khi kích hoạt thành công, terminal sẽ hiển thị tiền tố (venv).
 
-2.3. Cài đặt các thư viện cần thiết
-2.3.1. Cập nhật pip
+### 2.3. Cài đặt các thư viện cần thiết
+### 2.3.1. Cập nhật pip
 ```
 pip install --upgrade pip
 ```
-2.3.2. Cài đặt Sionna và các thư viện phụ thuộc
+### 2.3.2. Cài đặt Sionna và các thư viện phụ thuộc
 ```
 pip install sionna tensorflow numpy scipy matplotlib
 ```
@@ -115,7 +115,7 @@ Các phiên bản thư viện đã được sử dụng trong dự án trên Ubu
 
 ---
 
-2.4. Cài đặt và sử dụng Jupyter Notebook (nếu dùng)
+### 2.4. Cài đặt và sử dụng Jupyter Notebook (nếu dùng)
 ```
 pip install jupyterlab
 ```
@@ -123,4 +123,4 @@ pip install jupyterlab
 Truy cập Jupyter Notebook trong môi trường ảo:
 ```
 jupyter lab
-``
+```
