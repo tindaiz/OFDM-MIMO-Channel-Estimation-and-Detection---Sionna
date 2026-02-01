@@ -6,13 +6,9 @@ Các mục tiêu chính của dự án bao gồm:
 Xây dựng mô hình end-to-end OFDM-MIMO từ phía phát đến phía thu theo chuẩn 5G
 
 Nghiên cứu và so sánh các phương pháp ước lượng kênh OFDM, bao gồm:
-
 - Least Squares (LS)
-
 - Nội suy Nearest-Neighbor
-
 - Nội suy Linear
-
 - Nội suy LMMSE (có/không làm mượt không gian – thời gian – tần số)
 
 Đánh giá độ chính xác ước lượng kênh thông qua chỉ số MSE (Mean Square Error) theo SNR
@@ -20,25 +16,17 @@ Nghiên cứu và so sánh các phương pháp ước lượng kênh OFDM, bao g
 So sánh các thuật toán MIMO Detection phổ biến trong Sionna:
 
 - LMMSE (Linear Detection)
-
 - K-Best Detection
-
 - Expectation Propagation (EP)
-
 - MMSE-PIC
 
 Phân tích ảnh hưởng của:
-
 - Perfect CSI vs Imperfect CSI (Channel Estimation)
-
 - SNR (Eb/N0)
-
 - Số anten MIMO 
 
 Đánh giá hiệu năng hệ thống thông qua:
-
 - SER (Symbol Error Rate)
-
 - BER (Bit Error Rate) (có mã hóa LDPC 5G)
 
 Dự án hướng tới mục tiêu benchmark các bộ thu OFDM-MIMO trong điều kiện thực tế, đồng thời làm nền tảng cho các nghiên cứu nâng cao như learned receivers hoặc model-driven deep learning trong 5G/6G.
@@ -191,10 +179,12 @@ Trong dự án, hiệu năng hệ thống được đánh giá thông qua các c
 - SNR (Signal-to-Noise Ratio): Tham số chính để khảo sát hiệu năng hệ thống trong các điều kiện kênh khác nhau.
 
 ### 4.2. Kết quả mô phỏng BER theo SNR
-Mô tả kịch bản mô phỏng: mô phỏng thể hiện hiệu năng của hệ thống OFDM MIMO
+Kịch bản mô phỏng: mô phỏng thể hiện hiệu năng của hệ thống OFDM MIMO
 4×16, điều chế 16-QAM, trong môi trường 3GPP UMi, với các thuật toán detection khác
 nhau: LMMSE, EP, K-Best
+
 Hai trường hợp CSI được xét: Perfect CSI, Channel Estimation (Imperfect CSI)
+
 Hai chỉ số đánh giá: SER (Symbol Error Rate), BER (Bit Error Rate)
 
 ![Kết quả mô phỏng](doc/ketqua.png)
