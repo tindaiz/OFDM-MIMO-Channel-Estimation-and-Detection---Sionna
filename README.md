@@ -176,7 +176,7 @@ Toàn bộ kết quả được thực hiện dựa trên notebook:
 ```
 tutorials/phy/OFDM_MIMO_Detection.ipynb
 ```
-![Pipe_line](doc/ketqua.png)
+![Pipe_line](doc/pipe_line.png)
 
 Notebook này xây dựng mô hình mô phỏng end-to-end cho hệ thống OFDM-MIMO, từ phát sinh dữ liệu, điều chế, truyền qua kênh 3GPP UMi, ước lượng kênh, phát hiện tín hiệu cho đến đánh giá hiệu năng thông qua các chỉ số MSE, SER và BER.
 
@@ -196,7 +196,7 @@ Hai trường hợp CSI được xét: Perfect CSI, Channel Estimation (Imperfec
 
 Hai chỉ số đánh giá: SER (Symbol Error Rate), BER (Bit Error Rate)
 
-![Kết quả mô phỏng](doc/pipe_line.png)
+![Kết quả mô phỏng](doc/ketqua.png)
 
 Kết quả mô phỏng cho thấy:
 - BER giảm rõ rệt khi SNR tăng, phù hợp với lý thuyết truyền thông số
