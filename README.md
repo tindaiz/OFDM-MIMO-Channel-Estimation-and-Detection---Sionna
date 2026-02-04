@@ -26,8 +26,9 @@ Phân tích ảnh hưởng của:
 - Số anten MIMO 
 
 Đánh giá hiệu năng hệ thống thông qua:
-- SER (Symbol Error Rate)
-- BER (Bit Error Rate) (có mã hóa LDPC 5G)
+- SER (Symbol Error Rate: Tỷ lệ lỗi ký hiệu): một chỉ số đo lường chất lượng truyền dẫn không dây. SER thể hiện số lượng ký hiệu (symbol) bị lỗi nhận được trên tổng số ký hiệu truyền đi.
+
+- BER (Bit Error Rate): tỷ lệ giữa số bit lỗi và tổng số bit được truyền đi.
 
 Dự án hướng tới mục tiêu benchmark các bộ thu OFDM-MIMO trong điều kiện thực tế, đồng thời làm nền tảng cho các nghiên cứu nâng cao như learned receivers hoặc model-driven deep learning trong 5G/6G.
 
@@ -170,6 +171,14 @@ Thời gian mô phỏng phụ thuộc vào:
 ### 4. Kết quả
 
 Phần này trình bày các kết quả chính thu được từ quá trình mô phỏng hệ thống OFDM MIMO Channel Estimation and Detection sử dụng framework Sionna, đồng thời đưa ra những nhận xét tổng quan về hiệu năng hệ thống.
+
+Toàn bộ kết quả được thực hiện dựa trên notebook:
+```
+tutorials/phy/OFDM_MIMO_Detection.ipynb
+```
+![Pipe_line](doc/ketqua.png)
+
+Notebook này xây dựng mô hình mô phỏng end-to-end cho hệ thống OFDM-MIMO, từ phát sinh dữ liệu, điều chế, truyền qua kênh 3GPP UMi, ước lượng kênh, phát hiện tín hiệu cho đến đánh giá hiệu năng thông qua các chỉ số MSE, SER và BER.
 
 ### 4.1. Các chỉ số đánh giá
 
