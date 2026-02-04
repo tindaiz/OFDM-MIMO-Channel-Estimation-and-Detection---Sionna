@@ -196,7 +196,7 @@ Hai trường hợp CSI được xét: Perfect CSI, Channel Estimation (Imperfec
 
 Hai chỉ số đánh giá: SER (Symbol Error Rate), BER (Bit Error Rate)
 
-![Kết quả mô phỏng](doc/ketqua.png)
+![Kết quả mô phỏng](doc/pipe_line.png)
 
 Kết quả mô phỏng cho thấy:
 - BER giảm rõ rệt khi SNR tăng, phù hợp với lý thuyết truyền thông số
