@@ -191,14 +191,19 @@ Trong dự án, hiệu năng hệ thống được đánh giá thông qua các c
 Kịch bản mô phỏng: mô phỏng thể hiện hiệu năng của hệ thống OFDM MIMO
 4×16, điều chế 16-QAM, trong môi trường 3GPP UMi, với các thuật toán detection khác
 nhau: LMMSE, EP, K-Best.
-Hai trường hợp CSI được xét: Perfect CSI, Channel Estimation (Imperfect CSI)
-Hai chỉ số đánh giá: SER (Symbol Error Rate), BER (Bit Error Rate)
+
+Hai trường hợp CSI được xét: Perfect CSI, Channel Estimation (Imperfect CSI).
+
+Hai chỉ số đánh giá: SER (Symbol Error Rate), BER (Bit Error Rate).
 
 ![Kết quả mô phỏng](doc/ketqua2.png)
+
 <p align="center">
   Kết quả mô phỏng MIMO 4x8
 </p>
+
 ![Kết quả mô phỏng](doc/ketqua.png)
+
 <p align="center">
   Kết quả mô phỏng MIMO 4x16
 </p>
