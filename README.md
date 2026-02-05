@@ -28,7 +28,7 @@ Phân tích ảnh hưởng của:
 Đánh giá hiệu năng hệ thống thông qua:
 - SER (Symbol Error Rate: Tỷ lệ lỗi ký hiệu): một chỉ số đo lường chất lượng truyền dẫn không dây. SER thể hiện số lượng ký hiệu (symbol) bị lỗi nhận được trên tổng số ký hiệu truyền đi.
 
-- BER (Bit Error Rate): tỷ lệ giữa số bit lỗi và tổng số bit được truyền đi.
+- BER (Bit Error Rate: Tỷ lệ lỗi bit): tỷ lệ giữa số bit lỗi và tổng số bit được truyền đi.
 
 Dự án hướng tới mục tiêu benchmark các bộ thu OFDM-MIMO trong điều kiện thực tế, đồng thời làm nền tảng cho các nghiên cứu nâng cao như learned receivers hoặc model-driven deep learning trong 5G/6G.
 
@@ -83,7 +83,7 @@ source venv/bin/activate
 Sau khi kích hoạt thành công, terminal sẽ hiển thị tiền tố (venv).
 
 ### 2.3. Cài đặt các thư viện cần thiết
-### 2.3.1. Cập nhật pip
+### 2.3.1. Cài đặt và cập nhật pip
 ```
 pip install --upgrade pip
 ```
@@ -95,13 +95,13 @@ pip install sionna tensorflow numpy scipy matplotlib
 Các phiên bản thư viện đã được sử dụng trong dự án trên Ubuntu 22.04:
 
 ---
-| Thư viện       | Phiên bản |
-| -------------- | --------- |
-| **Sionna**     | 1.2.0     |
-| **TensorFlow** | 2.10.1    |
-| **NumPy**      | 1.26.4    |
-| **SciPy**      | 1.11.4    |
-| **Matplotlib** | 3.8.2     |
+                            | Thư viện       | Phiên bản |
+                            | -------------- | --------- |
+                            | **Sionna**     | 1.2.0     |
+                            | **TensorFlow** | 2.10.1    |
+                            | **NumPy**      | 1.26.4    |
+                            | **SciPy**      | 1.11.4    |
+                            | **Matplotlib** | 3.8.2     |
 
 ---
 
