@@ -188,20 +188,50 @@ Trong dự án, hiệu năng hệ thống được đánh giá thông qua các c
 - SNR (Signal-to-Noise Ratio): Tham số chính để khảo sát hiệu năng hệ thống trong các điều kiện kênh khác nhau.
 
 ### 4.2. Kết quả mô phỏng 
+Thực hiện mô phỏng và đánh giá bài toán ước lượng kênh OFDM (Channel Estimation) trong hệ thống OFDM-MIMO theo chuẩn 5G NR bằng framework Sionna.
+Kịch bản mô phỏng được thực hiện với các thiết lập chính như sau:
+1. Hệ thống OFDM-MIMO trong môi trường kênh 3GPP UMi
+2. Sử dụng pilot-based channel estimation
+3. Điều chế QPSK / 16-QAM (không ảnh hưởng trực tiếp đến quá trình ước lượng kênh)
+4. So sánh các phương pháp ước lượng và nội suy kênh OFDM:
+- LS + Nearest Neighbor interpolation
+- LS + Linear interpolation
+- LS + LMMSE interpolation (sử dụng ma trận tương quan thời gian – tần số – không gian)
+
+Tham số khảo sát chính: SNR (dB)
+
+Chỉ số đánh giá được sử dụng là: MSE (Mean Square Error) giữa kênh thực và kênh ước lượng.
+
+![Kết quả mô phỏng](doc/Estimation.png)
+<p align="center">
+  Kết quả mô phỏng ước lượng kênh OFDM
+</p>
+
+Kết quả mô phỏng MSE theo SNR cho thấy:
+- MSE giảm khi SNR tăng, phù hợp với lý thuyết truyền thông số
+- Ở vùng SNR thấp, nhiễu chiếm ưu thế khiến sai số ước lượng kênh lớn
+- Khi SNR tăng cao, chất lượng ước lượng kênh được cải thiện rõ rệt
+- Phương pháp LMMSE interpolation cho MSE thấp nhất nhờ khai thác thông tin tương quan của kênh
+- Các phương pháp đơn giản như Nearest Neighbor có độ phức tạp thấp nhưng cho hiệu năng kém hơn
+Kết quả này cho thấy độ chính xác của Channel Estimation ảnh hưởng trực tiếp đến hiệu năng phát hiện và giải mã ở các khối phía sau, đặc biệt trong các hệ thống MIMO bậc
 
 
 Kịch bản mô phỏng: mô phỏng thể hiện hiệu năng của hệ thống OFDM MIMO
 4×16, điều chế 16-QAM, trong môi trường 3GPP UMi, với các thuật toán detection khác
-nhau: LMMSE, EP, K-Best
+nhau: LMMSE, EP, K-Best.
 
 Hai trường hợp CSI được xét: Perfect CSI, Channel Estimation (Imperfect CSI)
 
 Hai chỉ số đánh giá: SER (Symbol Error Rate), BER (Bit Error Rate)
 
 ![Kết quả mô phỏng](doc/ketqua2.png)
-Kết quả mô phỏng MIMO 4x8
+<p align="center">
+  Kết quả mô phỏng MIMO 4x8
+</p>
 ![Kết quả mô phỏng](doc/ketqua.png)
-Kết quả mô phỏng MIMO 4x16
+<p align="center">
+  Kết quả mô phỏng MIMO 4x16
+</p>
 
 Kết quả mô phỏng cho thấy:
 - BER giảm rõ rệt khi SNR tăng, phù hợp với lý thuyết truyền thông số
