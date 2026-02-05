@@ -187,7 +187,9 @@ Trong dự án, hiệu năng hệ thống được đánh giá thông qua các c
 - SER (Symbol Error Rate) : Tỷ lệ lỗi ký hiệu trước khi giải mã kênh.
 - SNR (Signal-to-Noise Ratio): Tham số chính để khảo sát hiệu năng hệ thống trong các điều kiện kênh khác nhau.
 
-### 4.2. Kết quả mô phỏng BER theo SNR
+### 4.2. Kết quả mô phỏng 
+
+
 Kịch bản mô phỏng: mô phỏng thể hiện hiệu năng của hệ thống OFDM MIMO
 4×16, điều chế 16-QAM, trong môi trường 3GPP UMi, với các thuật toán detection khác
 nhau: LMMSE, EP, K-Best
@@ -196,7 +198,10 @@ Hai trường hợp CSI được xét: Perfect CSI, Channel Estimation (Imperfec
 
 Hai chỉ số đánh giá: SER (Symbol Error Rate), BER (Bit Error Rate)
 
+![Kết quả mô phỏng](doc/ketqua2.png)
+Kết quả mô phỏng MIMO 4x8
 ![Kết quả mô phỏng](doc/ketqua.png)
+Kết quả mô phỏng MIMO 4x16
 
 Kết quả mô phỏng cho thấy:
 - BER giảm rõ rệt khi SNR tăng, phù hợp với lý thuyết truyền thông số
